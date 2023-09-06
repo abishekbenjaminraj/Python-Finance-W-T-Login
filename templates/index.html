@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>Financial Management</h1>
+<hr>
+<div style="justify-content: right;text-align: right;">
+    <a href="{{url_for('insert')}}" class="btn btn-success">Add User</a>
+</div>
+<table class="table">
+    <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Fund Name</th>
+        <th>Invested Amount</th>
+        <th>Unitsheld</th>
+        <th>Nav</th>
+        <th>Current Value</th>
+        <th>Growth</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    {%for i in box%}
+    <tr>
+        <td>{{i.SNO}}</td>
+        <td>{{i.Name}}</td>
+        <td>{{i.Fundname}}</td>
+        <td>{{i.Invested}}</td>
+        <td>{{i.Unitsheld}}</td>
+        <td>{{i.Nav}}</td>
+        <td>{{i.Currentvalue}}</td>
+        <td>{{i.Growth}}</td>
+        <td><a href="{{url_for('edit',id=i.SNO)}}" class="btn btn-primary">Edit</a></td>
+        <td><a href="{{url_for('delete',id=i.SNO)}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {%endfor%}
+</table>
+{% endblock body %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="row">
+    <div class="col-5 mx-auto">
+        <h2>Add Students</h2>
+        <hr>
+        <form method="post" action="{{url_for('insert')}}">
+            <div class="form-group">
+                <input type="text" placeholder="Enter Name" name="name" required=1 class="form-control">
+            </div><br>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Funds" name="funds" required=1 class="form-control">
+            </div><br>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Inves Amount" name="inves" required=1 class="form-control">
+            </div><br>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Unitsheld" name="units" required=1 class="form-control"><br>
+            </div><br>
+            
+            <input type="submit" value="Add Student" class="btn btn-primary form-control">
+                
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}
